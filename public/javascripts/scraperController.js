@@ -1,9 +1,7 @@
 'use strict';
 (function(){
     angular.module('scraperApp',[])
-    
-    // define controller and inject $http service as dependency.
-    .controller('ScraperCtrl',['$http','$scope',function($http,$scope){ 
+        .controller('ScraperCtrl',['$http','$scope',function($http,$scope){ 
     	$scope.scrape = function (){
     		$http({
     		    url: 'title', 
@@ -14,7 +12,7 @@
         	if (response.errorMessage){
         		$scope.error = response.errorMessage
         	}else{
-        		$scope.title = response.title; // Assign data received to $scope.data
+        		$scope.title = response.title;
         	}
         })
         .error(function(err){
